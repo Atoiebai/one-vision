@@ -38,7 +38,7 @@ public class BookController {
     @PostMapping("/books/search")
     public ResponseEntity<ResponseData<Map<String, Integer>>> getBooks(@RequestBody @Valid BooksFilterRequest booksFilter) {
         // TODO: 11/09/22  search by multiple params (currently not supported)
-        return response(bookService.booksByTitleContains(booksFilter.getCharFromTitle().toString()), HttpStatus.OK);
+        return response(bookService.booksByTitleContains(booksFilter.getCharFromTitle()), HttpStatus.OK);
     }
 
 
